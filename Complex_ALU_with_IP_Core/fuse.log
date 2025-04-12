@@ -1,0 +1,33 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/mahbod/Desktop/Complex_ALU/test1_comples_alu_isim_beh.exe -prj C:/Users/mahbod/Desktop/Complex_ALU/test1_comples_alu_beh.prj work.test1_comples_alu work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/mahbod/Desktop/Complex_ALU/ipcore_dir/complex_mul.v" into library work
+Analyzing Verilog file "C:/Users/mahbod/Desktop/Complex_ALU/Comlex_ALU.v" into library work
+Analyzing Verilog file "C:/Users/mahbod/Desktop/Complex_ALU/test1_comples_alu.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+WARNING:HDLCompiler:687 - "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" Line 5: Illegal redeclaration of module <glbl>.
+Starting static elaboration
+Completed static elaboration
+Compiling module FDE
+Compiling module SRLC16E
+Compiling module LUT2(INIT=4'b1000)
+Compiling module FD
+Compiling module MUXCY
+Compiling module XORCY
+Compiling module GND
+Compiling module VCC
+Compiling module LUT3(INIT=8'b0101000)
+Compiling module LUT4(INIT=16'b0110110010100000)
+Compiling module MULT_AND
+Compiling module complex_mul
+Compiling module Comlex_ALU_default
+Compiling module test1_comples_alu
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 21 Verilog Units
+Built simulation executable C:/Users/mahbod/Desktop/Complex_ALU/test1_comples_alu_isim_beh.exe
+Fuse Memory Usage: 32852 KB
+Fuse CPU Usage: 716 ms

@@ -1,0 +1,261 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: complex_array_mul.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "complex_array_mul.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "complex_array_mul"
+Output Format                      : NGC
+Target Device                      : xc7vx330t-3-ffg1157
+
+---- Source Options
+Top Module Name                    : complex_array_mul
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\Pouya\Desktop\SOC\Complex_ALU\ipcore_dir\complex_mul.v" into library work
+Parsing module <complex_mul>.
+Analyzing Verilog file "C:\Users\Pouya\Desktop\SOC\Complex_ALU\complex_array_mul.v" into library work
+Parsing module <complex_array_mul>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <complex_array_mul>.
+
+Elaborating module <complex_mul>.
+ERROR:HDLCompiler:1401 - "C:\Users\Pouya\Desktop\SOC\Complex_ALU\complex_array_mul.v" Line 68: Signal i[31] in unit complex_array_mul is connected to following multiple drivers:
+Driver 0: output signal i[31] of instance Flip-flop (i).
+Driver 1: output signal i[31] of instance Flip-flop (_i000041).
+Driver 0: output signal i[30] of instance Flip-flop (i).
+Driver 1: output signal i[30] of instance Flip-flop (_i000041).
+Driver 0: output signal i[29] of instance Flip-flop (i).
+Driver 1: output signal i[29] of instance Flip-flop (_i000041).
+Driver 0: output signal i[28] of instance Flip-flop (i).
+Driver 1: output signal i[28] of instance Flip-flop (_i000041).
+Driver 0: output signal i[27] of instance Flip-flop (i).
+Driver 1: output signal i[27] of instance Flip-flop (_i000041).
+Driver 0: output signal i[26] of instance Flip-flop (i).
+Driver 1: output signal i[26] of instance Flip-flop (_i000041).
+Driver 0: output signal i[25] of instance Flip-flop (i).
+Driver 1: output signal i[25] of instance Flip-flop (_i000041).
+Driver 0: output signal i[24] of instance Flip-flop (i).
+Driver 1: output signal i[24] of instance Flip-flop (_i000041).
+Driver 0: output signal i[23] of instance Flip-flop (i).
+Driver 1: output signal i[23] of instance Flip-flop (_i000041).
+Driver 0: output signal i[22] of instance Flip-flop (i).
+Driver 1: output signal i[22] of instance Flip-flop (_i000041).
+Driver 0: output signal i[21] of instance Flip-flop (i).
+Driver 1: output signal i[21] of instance Flip-flop (_i000041).
+Driver 0: output signal i[20] of instance Flip-flop (i).
+Driver 1: output signal i[20] of instance Flip-flop (_i000041).
+Driver 0: output signal i[19] of instance Flip-flop (i).
+Driver 1: output signal i[19] of instance Flip-flop (_i000041).
+Driver 0: output signal i[18] of instance Flip-flop (i).
+Driver 1: output signal i[18] of instance Flip-flop (_i000041).
+Driver 0: output signal i[17] of instance Flip-flop (i).
+Driver 1: output signal i[17] of instance Flip-flop (_i000041).
+Driver 0: output signal i[16] of instance Flip-flop (i).
+Driver 1: output signal i[16] of instance Flip-flop (_i000041).
+Driver 0: output signal i[15] of instance Flip-flop (i).
+Driver 1: output signal i[15] of instance Flip-flop (_i000041).
+Driver 0: output signal i[14] of instance Flip-flop (i).
+Driver 1: output signal i[14] of instance Flip-flop (_i000041).
+Driver 0: output signal i[13] of instance Flip-flop (i).
+Driver 1: output signal i[13] of instance Flip-flop (_i000041).
+Driver 0: output signal i[12] of instance Flip-flop (i).
+Driver 1: output signal i[12] of instance Flip-flop (_i000041).
+Driver 0: output signal i[11] of instance Flip-flop (i).
+Driver 1: output signal i[11] of instance Flip-flop (_i000041).
+Driver 0: output signal i[10] of instance Flip-flop (i).
+Driver 1: output signal i[10] of instance Flip-flop (_i000041).
+Driver 0: output signal i[9] of instance Flip-flop (i).
+Driver 1: output signal i[9] of instance Flip-flop (_i000041).
+Driver 0: output signal i[8] of instance Flip-flop (i).
+Driver 1: output signal i[8] of instance Flip-flop (_i000041).
+Driver 0: output signal i[7] of instance Flip-flop (i).
+Driver 1: output signal i[7] of instance Flip-flop (_i000041).
+Driver 0: output signal i[6] of instance Flip-flop (i).
+Driver 1: output signal i[6] of instance Flip-flop (_i000041).
+Driver 0: output signal i[5] of instance Flip-flop (i).
+Driver 1: output signal i[5] of instance Flip-flop (_i000041).
+Driver 0: output signal i[4] of instance Flip-flop (i).
+Driver 1: output signal i[4] of instance Flip-flop (_i000041).
+Driver 0: output signal i[3] of instance Flip-flop (i).
+Driver 1: output signal i[3] of instance Flip-flop (_i000041).
+Driver 0: output signal i[2] of instance Flip-flop (i).
+Driver 1: output signal i[2] of instance Flip-flop (_i000041).
+Driver 0: output signal i[1] of instance Flip-flop (i).
+Driver 1: output signal i[1] of instance Flip-flop (_i000041).
+Driver 0: output signal i[0] of instance Flip-flop (i).
+Driver 1: output signal i[0] of instance Flip-flop (_i000041).
+Driver 0: output signal j[31] of instance Flip-flop (j).
+Driver 1: output signal j[31] of instance Flip-flop (_i000039).
+Driver 0: output signal j[30] of instance Flip-flop (j).
+Driver 1: output signal j[30] of instance Flip-flop (_i000039).
+Driver 0: output signal j[29] of instance Flip-flop (j).
+Driver 1: output signal j[29] of instance Flip-flop (_i000039).
+Driver 0: output signal j[28] of instance Flip-flop (j).
+Driver 1: output signal j[28] of instance Flip-flop (_i000039).
+Driver 0: output signal j[27] of instance Flip-flop (j).
+Driver 1: output signal j[27] of instance Flip-flop (_i000039).
+Driver 0: output signal j[26] of instance Flip-flop (j).
+Driver 1: output signal j[26] of instance Flip-flop (_i000039).
+Driver 0: output signal j[25] of instance Flip-flop (j).
+Driver 1: output signal j[25] of instance Flip-flop (_i000039).
+Driver 0: output signal j[24] of instance Flip-flop (j).
+Driver 1: output signal j[24] of instance Flip-flop (_i000039).
+Driver 0: output signal j[23] of instance Flip-flop (j).
+Driver 1: output signal j[23] of instance Flip-flop (_i000039).
+Driver 0: output signal j[22] of instance Flip-flop (j).
+Driver 1: output signal j[22] of instance Flip-flop (_i000039).
+Driver 0: output signal j[21] of instance Flip-flop (j).
+Driver 1: output signal j[21] of instance Flip-flop (_i000039).
+Driver 0: output signal j[20] of instance Flip-flop (j).
+Driver 1: output signal j[20] of instance Flip-flop (_i000039).
+Driver 0: output signal j[19] of instance Flip-flop (j).
+Driver 1: output signal j[19] of instance Flip-flop (_i000039).
+Driver 0: output signal j[18] of instance Flip-flop (j).
+Driver 1: output signal j[18] of instance Flip-flop (_i000039).
+Driver 0: output signal j[17] of instance Flip-flop (j).
+Driver 1: output signal j[17] of instance Flip-flop (_i000039).
+Driver 0: output signal j[16] of instance Flip-flop (j).
+Driver 1: output signal j[16] of instance Flip-flop (_i000039).
+Driver 0: output signal j[15] of instance Flip-flop (j).
+Driver 1: output signal j[15] of instance Flip-flop (_i000039).
+Driver 0: output signal j[14] of instance Flip-flop (j).
+Driver 1: output signal j[14] of instance Flip-flop (_i000039).
+Driver 0: output signal j[13] of instance Flip-flop (j).
+Driver 1: output signal j[13] of instance Flip-flop (_i000039).
+Driver 0: output signal j[12] of instance Flip-flop (j).
+Driver 1: output signal j[12] of instance Flip-flop (_i000039).
+Driver 0: output signal j[11] of instance Flip-flop (j).
+Driver 1: output signal j[11] of instance Flip-flop (_i000039).
+Driver 0: output signal j[10] of instance Flip-flop (j).
+Driver 1: output signal j[10] of instance Flip-flop (_i000039).
+Driver 0: output signal j[9] of instance Flip-flop (j).
+Driver 1: output signal j[9] of instance Flip-flop (_i000039).
+Driver 0: output signal j[8] of instance Flip-flop (j).
+Driver 1: output signal j[8] of instance Flip-flop (_i000039).
+Driver 0: output signal j[7] of instance Flip-flop (j).
+Driver 1: output signal j[7] of instance Flip-flop (_i000039).
+Driver 0: output signal j[6] of instance Flip-flop (j).
+Driver 1: output signal j[6] of instance Flip-flop (_i000039).
+Driver 0: output signal j[5] of instance Flip-flop (j).
+Driver 1: output signal j[5] of instance Flip-flop (_i000039).
+Driver 0: output signal j[4] of instance Flip-flop (j).
+Driver 1: output signal j[4] of instance Flip-flop (_i000039).
+Driver 0: output signal j[3] of instance Flip-flop (j).
+Driver 1: output signal j[3] of instance Flip-flop (_i000039).
+Driver 0: output signal j[2] of instance Flip-flop (j).
+Driver 1: output signal j[2] of instance Flip-flop (_i000039).
+Driver 0: output signal j[1] of instance Flip-flop (j).
+Driver 1: output signal j[1] of instance Flip-flop (_i000039).
+Driver 0: output signal j[0] of instance Flip-flop (j).
+Driver 1: output signal j[0] of instance Flip-flop (_i000039).
+Module complex_array_mul remains a blackbox, due to errors in its contents
+WARNING:HDLCompiler:1499 - "C:\Users\Pouya\Desktop\SOC\Complex_ALU\complex_array_mul.v" Line 21: Empty module <complex_array_mul> remains a black box.
+--> 
+
+Total memory usage is 241492 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

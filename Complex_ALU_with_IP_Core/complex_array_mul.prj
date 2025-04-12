@@ -1,0 +1,2 @@
+verilog work "ipcore_dir/complex_mul.v"
+verilog work "complex_array_mul.v"

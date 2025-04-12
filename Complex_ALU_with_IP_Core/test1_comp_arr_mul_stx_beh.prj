@@ -1,0 +1,4 @@
+verilog isim_temp "ipcore_dir/complex_mul.v"
+verilog isim_temp "complex_array_mul.v"
+verilog isim_temp "test1_comp_arr_mul.v"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
