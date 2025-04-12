@@ -1,0 +1,16 @@
+# Output products list for <complex_mul>
+_xmsgs\pn_parser.xmsgs
+complex_mul.asy
+complex_mul.gise
+complex_mul.ngc
+complex_mul.sym
+complex_mul.v
+complex_mul.veo
+complex_mul.xco
+complex_mul.xise
+complex_mul\doc\cmpy_v5_0_readme.txt
+complex_mul\doc\cmpy_v5_0_vinfo.html
+complex_mul\doc\ds793_cmpy.pdf
+complex_mul_flist.txt
+complex_mul_xmdf.tcl
+demo_tb\tb_complex_mul.vhd
