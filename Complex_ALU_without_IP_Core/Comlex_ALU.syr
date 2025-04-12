@@ -1,0 +1,928 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Reading design: Comlex_ALU.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Comlex_ALU.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Comlex_ALU"
+Output Format                      : NGC
+Target Device                      : xc7vx330t-2-ffg1157
+
+---- Source Options
+Top Module Name                    : Comlex_ALU
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Area
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : True
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Area
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : YES
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\mahbod\Desktop\Complex_ALU_withoutip\complex_mul.v" into library work
+Parsing module <complex_mul>.
+Analyzing Verilog file "C:\Users\mahbod\Desktop\Complex_ALU_withoutip\Complex_ALU.v" into library work
+Parsing module <Comlex_ALU>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <Comlex_ALU>.
+
+Elaborating module <complex_mul>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <Comlex_ALU>.
+    Related source file is "C:\Users\mahbod\Desktop\Complex_ALU_withoutip\Complex_ALU.v".
+        a_row = 3
+        a_column = 3
+        b_row = 3
+        b_column = 3
+        size = 16
+WARNING:Xst:647 - Input <m1> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <m2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <a_valid> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <b_valid> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "C:\Users\mahbod\Desktop\Complex_ALU_withoutip\Complex_ALU.v" line 68: Output port <result> of the instance <complex_mul_gen[1].mc> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\mahbod\Desktop\Complex_ALU_withoutip\Complex_ALU.v" line 68: Output port <result> of the instance <complex_mul_gen[2].mc> is unconnected or connected to loadless signal.
+    Found 144-bit register for signal <n0217[143:0]>.
+    Found 2-bit register for signal <received>.
+    Found 1-bit register for signal <valid>.
+    Found 2-bit register for signal <op>.
+    Found 1-bit register for signal <total_r_valid>.
+    Found 1-bit register for signal <error>.
+    Found 32-bit register for signal <i>.
+    Found 32-bit register for signal <j>.
+    Found 48-bit register for signal <n0220[47:0]>.
+    Found 48-bit register for signal <n0221[47:0]>.
+    Found 1-bit register for signal <v1>.
+    Found 1-bit register for signal <v2>.
+    Found 1-bit register for signal <last_rd>.
+    Found 144-bit register for signal <n0216[143:0]>.
+    Found 32-bit adder for signal <j[31]_GND_1_o_add_107_OUT> created at line 139.
+    Found 32-bit adder for signal <i[31]_GND_1_o_add_109_OUT> created at line 143.
+    Found 16-bit 3-to-1 multiplexer for signal <j[2]_X_1_o_wide_mux_71_OUT> created at line 116.
+    Found 16-bit 3-to-1 multiplexer for signal <i[2]_X_1_o_wide_mux_70_OUT> created at line 115.
+    Found 16-bit 3-to-1 multiplexer for signal <i[2]_X_1_o_wide_mux_62_OUT> created at line 115.
+    Found 16-bit 3-to-1 multiplexer for signal <i[2]_X_1_o_wide_mux_66_OUT> created at line 115.
+    Found 16-bit 3-to-1 multiplexer for signal <j[2]_X_1_o_wide_mux_67_OUT> created at line 116.
+    Found 16-bit 3-to-1 multiplexer for signal <j[2]_X_1_o_wide_mux_63_OUT> created at line 116.
+    Found 2-bit comparator greater for signal <op[1]_PWR_1_o_LessThan_6_o> created at line 97
+    Found 32-bit comparator greater for signal <GND_1_o_j[31]_LessThan_107_o> created at line 138
+    Found 32-bit comparator greater for signal <GND_1_o_i[31]_LessThan_109_o> created at line 142
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 458 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+	inferred 110 Multiplexer(s).
+Unit <Comlex_ALU> synthesized.
+
+Synthesizing Unit <complex_mul>.
+    Related source file is "C:\Users\mahbod\Desktop\Complex_ALU_withoutip\complex_mul.v".
+        size = 16
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 17-bit subtractor for signal <GND_2_o_GND_2_o_sub_11_OUT> created at line 46.
+    Found 17-bit adder for signal <n0027[16:0]> created at line 47.
+    Found 8x8-bit multiplier for signal <a[7]_b[7]_MuLt_8_OUT> created at line 46.
+    Found 8x8-bit multiplier for signal <a[15]_b[15]_MuLt_9_OUT> created at line 46.
+    Found 8x8-bit multiplier for signal <a[7]_b[15]_MuLt_11_OUT> created at line 47.
+    Found 8x8-bit multiplier for signal <a[15]_b[7]_MuLt_12_OUT> created at line 47.
+    Summary:
+	inferred   4 Multiplier(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <complex_mul> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 12
+ 8x8-bit multiplier                                    : 12
+# Adders/Subtractors                                   : 8
+ 17-bit adder                                          : 3
+ 17-bit subtractor                                     : 3
+ 32-bit adder                                          : 2
+# Registers                                            : 14
+ 1-bit register                                        : 6
+ 144-bit register                                      : 2
+ 2-bit register                                        : 2
+ 32-bit register                                       : 2
+ 48-bit register                                       : 2
+# Comparators                                          : 3
+ 2-bit comparator greater                              : 1
+ 32-bit comparator greater                             : 2
+# Multiplexers                                         : 110
+ 1-bit 2-to-1 multiplexer                              : 101
+ 16-bit 3-to-1 multiplexer                             : 6
+ 32-bit 2-to-1 multiplexer                             : 1
+ 48-bit 2-to-1 multiplexer                             : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <received_1> of sequential type is unconnected in block <Comlex_ALU>.
+
+Synthesizing (advanced) Unit <Comlex_ALU>.
+The following registers are absorbed into counter <i>: 1 register on signal <i>.
+The following registers are absorbed into counter <j>: 1 register on signal <j>.
+Unit <Comlex_ALU> synthesized (advanced).
+
+Synthesizing (advanced) Unit <complex_mul>.
+	Multiplier <Mmult_a[7]_b[7]_MuLt_8_OUT> in block <complex_mul> and adder/subtractor <Msub_GND_2_o_GND_2_o_sub_11_OUT> in block <complex_mul> are combined into a MAC<Maddsub_a[7]_b[7]_MuLt_8_OUT>.
+	Multiplier <Mmult_a[7]_b[15]_MuLt_11_OUT> in block <complex_mul> and adder/subtractor <Madd_n0027[16:0]> in block <complex_mul> are combined into a MAC<Maddsub_a[7]_b[15]_MuLt_11_OUT>.
+Unit <complex_mul> synthesized (advanced).
+WARNING:Xst:2677 - Node <received_1> of sequential type is unconnected in block <Comlex_ALU>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# MACs                                                 : 6
+ 8x8-to-17-bit MAC                                     : 6
+# Multipliers                                          : 6
+ 8x8-bit multiplier                                    : 6
+# Counters                                             : 2
+ 32-bit up counter                                     : 2
+# Registers                                            : 393
+ Flip-Flops                                            : 393
+# Comparators                                          : 3
+ 2-bit comparator greater                              : 1
+ 32-bit comparator greater                             : 2
+# Multiplexers                                         : 293
+ 1-bit 2-to-1 multiplexer                              : 197
+ 1-bit 3-to-1 multiplexer                              : 96
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <a<2>_2_53> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_52> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_51> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_50> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_49> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_48> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_47> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_46> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_45> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_44> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_43> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_42> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_41> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_40> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_39> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_38> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_37> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_36> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_71> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_70> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_69> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_68> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_67> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_66> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_65> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_64> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_63> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_62> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_61> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_60> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_59> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_58> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_57> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_56> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_55> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_54> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_17> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_16> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_15> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_14> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_13> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_12> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_11> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_10> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_9> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_8> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_7> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_6> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_5> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_4> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_3> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_2> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_1> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_0> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_35> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_34> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_33> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_32> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_31> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_30> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_29> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_28> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_27> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_26> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_25> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_24> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_23> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_22> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_21> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_20> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_19> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_18> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_125> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_124> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_123> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_122> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_121> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_120> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_119> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_118> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_117> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_116> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_115> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_114> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_113> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_112> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_111> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_110> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_109> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_108> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_143> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_142> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_141> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_140> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_139> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_138> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_137> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_136> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_135> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_134> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_133> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_132> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_131> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_130> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_129> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_128> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_127> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_126> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_89> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_88> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_87> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_86> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_85> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_84> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_83> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_82> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_81> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_80> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_79> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_78> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_77> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_76> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_75> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_74> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_73> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_72> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_107> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_106> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_105> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_104> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_103> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_102> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_101> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_100> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_99> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_98> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_97> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_96> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_95> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_94> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_93> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_92> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_91> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a<2>_2_90> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_53> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_52> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_51> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_50> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_49> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_48> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_47> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_46> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_45> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_44> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_43> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_42> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_41> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_40> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_39> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_38> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_37> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_36> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_71> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_70> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_69> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_68> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_67> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_66> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_65> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_64> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_63> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_62> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_61> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_60> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_59> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_58> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_57> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_56> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_55> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_54> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_17> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_16> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_15> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_14> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_13> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_12> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_11> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_10> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_9> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_8> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_7> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_6> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_5> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_4> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_3> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_2> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_1> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_0> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_35> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_34> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_33> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_32> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_31> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_30> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_29> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_28> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_27> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_26> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_25> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_24> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_23> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_22> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_21> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_20> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_19> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_18> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_125> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_124> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_123> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_122> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_121> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_120> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_119> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_118> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_117> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_116> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_115> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_114> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_113> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_112> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_111> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_110> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_109> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_108> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_143> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_142> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_141> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_140> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_139> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_138> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_137> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_136> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_135> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_134> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_133> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_132> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_131> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_130> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_129> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_128> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_127> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_126> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_89> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_88> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_87> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_86> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_85> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_84> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_83> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_82> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_81> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_80> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_79> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_78> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_77> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_76> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_75> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_74> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_73> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_72> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_107> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_106> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_105> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_104> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_103> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_102> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_101> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_100> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_99> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_98> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_97> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_96> (without init value) has a constant value of 1 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_95> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_94> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_93> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_92> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_91> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <b<2>_2_90> (without init value) has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <v1> in Unit <Comlex_ALU> is equivalent to the following FF/Latch, which will be removed : <v2> 
+WARNING:Xst:2677 - Node <d1_2_0> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_1> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_2> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_3> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_4> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_5> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_6> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_7> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_8> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_9> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_10> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_11> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_12> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_13> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_14> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_15> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_16> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_17> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_18> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_19> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_20> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_21> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_22> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_23> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_24> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_25> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_26> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_27> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_28> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_29> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_30> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_31> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_32> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_33> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_34> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_35> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_36> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_37> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_38> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_39> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_40> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_41> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_42> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_43> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_44> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_45> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_46> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d1_2_47> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_0> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_1> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_2> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_3> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_4> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_5> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_6> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_7> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_8> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_9> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_10> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_11> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_12> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_13> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_14> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_15> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_16> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_17> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_18> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_19> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_20> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_21> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_22> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_23> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_24> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_25> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_26> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_27> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_28> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_29> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_30> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_31> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_32> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_33> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_34> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_35> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_36> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_37> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_38> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_39> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_40> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_41> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_42> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_43> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_44> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_45> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_46> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:2677 - Node <d2_2_47> of sequential type is unconnected in block <Comlex_ALU>.
+WARNING:Xst:1293 - FF/Latch <last_rd> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <Comlex_ALU> ...
+WARNING:Xst:1293 - FF/Latch <j_3> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_4> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_7> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_5> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_6> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_8> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_9> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_10> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_11> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_12> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_13> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_16> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_14> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_15> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_17> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_18> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_19> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_20> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_21> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_22> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_25> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_23> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_24> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_26> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_27> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_28> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_29> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_30> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_31> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_31> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_3> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_2> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_4> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_5> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_6> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_7> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_8> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_9> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_12> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_10> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_11> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_13> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_14> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_15> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_16> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_17> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_18> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_21> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_19> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_20> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_22> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_23> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_24> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_25> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_26> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_27> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_30> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_28> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_29> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_2> has a constant value of 0 in block <Comlex_ALU>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Comlex_ALU, actual ratio is 0.
+Replicating register valid to handle IOB=TRUE attribute
+Replicating register error to handle IOB=TRUE attribute
+
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 13
+ Flip-Flops                                            : 13
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : Comlex_ALU.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 47
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 3
+#      LUT2                        : 3
+#      LUT3                        : 6
+#      LUT4                        : 1
+#      LUT5                        : 5
+#      LUT6                        : 4
+#      MUXCY                       : 16
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 4
+# FlipFlops/Latches                : 13
+#      FD                          : 1
+#      FDE                         : 2
+#      FDR                         : 9
+#      FDRE                        : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 5
+#      IBUF                        : 3
+#      OBUF                        : 2
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7vx330tffg1157-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:               9  out of  408000     0%  
+ Number of Slice LUTs:                   24  out of  204000     0%  
+    Number used as Logic:                24  out of  204000     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     24
+   Number with an unused Flip Flop:      15  out of     24    62%  
+   Number with an unused LUT:             0  out of     24     0%  
+   Number of fully used LUT-FF pairs:     9  out of     24    37%  
+   Number of unique control sets:         4
+
+IO Utilization: 
+ Number of IOs:                          88
+ Number of bonded IOBs:                   6  out of    600     1%  
+    IOB Flip Flops/Latches:               4
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 13    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 2.537ns (Maximum Frequency: 394.151MHz)
+   Minimum input arrival time before clock: 1.161ns
+   Maximum output required time after clock: 0.575ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.537ns (frequency: 394.151MHz)
+  Total number of paths / destination ports: 118 / 24
+-------------------------------------------------------------------------
+Delay:               2.537ns (Levels of Logic = 12)
+  Source:            j_1 (FF)
+  Destination:       j_1 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: j_1 to j_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              3   0.236   0.362  j_1 (j_1)
+     LUT1:I0->O            1   0.043   0.000  Mcompar_GND_1_o_j[31]_LessThan_107_o_cy<0>_rt (Mcompar_GND_1_o_j[31]_LessThan_107_o_cy<0>_rt)
+     MUXCY:S->O            1   0.238   0.000  Mcompar_GND_1_o_j[31]_LessThan_107_o_cy<0> (Mcompar_GND_1_o_j[31]_LessThan_107_o_cy<0>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_GND_1_o_j[31]_LessThan_107_o_cy<1> (Mcompar_GND_1_o_j[31]_LessThan_107_o_cy<1>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_GND_1_o_j[31]_LessThan_107_o_cy<2> (Mcompar_GND_1_o_j[31]_LessThan_107_o_cy<2>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_GND_1_o_j[31]_LessThan_107_o_cy<3> (Mcompar_GND_1_o_j[31]_LessThan_107_o_cy<3>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_GND_1_o_j[31]_LessThan_107_o_cy<4> (Mcompar_GND_1_o_j[31]_LessThan_107_o_cy<4>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_GND_1_o_j[31]_LessThan_107_o_cy<5> (Mcompar_GND_1_o_j[31]_LessThan_107_o_cy<5>)
+     MUXCY:CI->O           8   0.151   0.378  Mcompar_GND_1_o_j[31]_LessThan_107_o_cy<6> (GND_1_o_j[31]_LessThan_107_o_inv)
+     INV:I->O              1   0.054   0.339  Mcompar_GND_1_o_j[31]_LessThan_107_o_cy<6>_inv1_INV_0 (GND_1_o_j[31]_LessThan_107_o_inv_inv)
+     MUXCY:CI->O           0   0.013   0.000  Mcount_j_cy<0> (Mcount_j_cy<0>)
+     XORCY:CI->O           1   0.262   0.350  Mcount_j_xor<1> (Mcount_j1)
+     LUT6:I5->O            1   0.043   0.000  j_1_glue_set (j_1_glue_set)
+     FDR:D                    -0.000          j_1
+    ----------------------------------------
+    Total                      2.537ns (1.108ns logic, 1.430ns route)
+                                       (43.7% logic, 56.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 15 / 15
+-------------------------------------------------------------------------
+Offset:              1.161ns (Levels of Logic = 2)
+  Source:            start (PAD)
+  Destination:       received_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: start to received_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.000   0.618  start_IBUF (start_IBUF)
+     LUT6:I0->O            1   0.043   0.339  _n0483_inv11 (_n0483_inv1)
+     FDRE:CE                   0.161          received_0
+    ----------------------------------------
+    Total                      1.161ns (0.204ns logic, 0.957ns route)
+                                       (17.6% logic, 82.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              0.575ns (Levels of Logic = 1)
+  Source:            valid (FF)
+  Destination:       valid (PAD)
+  Source Clock:      clk rising
+
+  Data Path: valid to valid
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.236   0.339  valid (valid_OBUF)
+     OBUF:I->O                 0.000          valid_OBUF (valid)
+    ----------------------------------------
+    Total                      0.575ns (0.236ns logic, 0.339ns route)
+                                       (41.0% logic, 59.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.537|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 12.06 secs
+ 
+--> 
+
+Total memory usage is 450712 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  452 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+
