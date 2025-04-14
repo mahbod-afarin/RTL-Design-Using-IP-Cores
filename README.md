@@ -1,5 +1,7 @@
 # Advantages of Using IP Cores
 
+Project Report: [link](https://github.com/mahbod-afarin/RTL-Design-Using-IP-Cores/blob/main/Report.pdf)
+
 ## 📌 Objective
 
 Design a complex ALU using available IP Cores from Xilinx ISE. You are required to simulate the design using ISE and construct it using the **Architecture Wizard & CORE Generator** tools provided in the software.
